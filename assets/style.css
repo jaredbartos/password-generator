@@ -30,6 +30,7 @@ header {
   color: hsl(206, 17%, 28%);
 }
 
+/* Password Generator Box */
 .card {
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
@@ -54,6 +55,28 @@ header {
   min-height: 100px;
 }
 
+#password {
+  /* Set style of password area */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  display: block;
+  width: 100%;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 85px;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 2px dashed #c0c7cf;
+  border-radius: 6px;
+  resize: none;
+  overflow: hidden;
+}
+
 .card-footer {
   text-align: center;
 }
@@ -73,6 +96,7 @@ header {
 }
 
 .btn {
+  /* Style Generate Password button */
   border: none;
   background-color: hsl(360, 91%, 36%);
   border-radius: 25px;
@@ -86,36 +110,6 @@ header {
   padding: 14px 34px;
   text-align: center;
   cursor: pointer;
-}
-
-button[disabled] {
-  cursor: default;
-  background: #c0c7cf;
-}
-
-.float-right {
-  float: right;
-}
-
-#password {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  display: block;
-  width: 100%;
-  padding-top: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 85px;
-  font-size: 1.2rem;
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 2px dashed #c0c7cf;
-  border-radius: 6px;
-  resize: none;
-  overflow: hidden;
 }
 
 @media (max-width: 690px) {

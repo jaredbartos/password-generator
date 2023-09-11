@@ -1,4 +1,4 @@
-// Assignment code here
+// Create generated password
 function generatePassword() {
   var lowercase = "abcdefghijklmnopqrstuvwxyz";
   var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -7,7 +7,8 @@ function generatePassword() {
   var passwordPool = "";
   var passwordLength;
   var passwordGenerated = "";
-
+  
+  // Add prompts for each character type and include if selected
   var length = Number(prompt("Please choose a length of at least 8 characters and no more than 128 characters."));
     if (length >= 8 && length <= 128) {
       passwordLength = length;
@@ -32,11 +33,13 @@ function generatePassword() {
       passwordPool += special;
     }
 
+  // Validate that at least one character type is selected
   if (lowercaseAnswer === false && uppercaseAnswer === false && numericAnswer === false && specialAnswer === false) {
     alert ("You must select at least one character type to include in your password. Please try again.");
     return;
   }
 
+  // Randomly choose characters from selected types and return the value
   for (var i = 0; i < passwordLength; i++) {
     passwordGenerated += passwordPool.charAt(Math.floor(Math.random() * passwordPool.length));
   }
