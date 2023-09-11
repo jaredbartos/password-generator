@@ -4,18 +4,38 @@ function generatePassword() {
   var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var numbers = "0123456789";
   var special = "!#$%&*+.;=?@_~";
+  var passwordPool = ""
+  var passwordLength
+  var passwordGenerated = ""
 
   var length = Number(prompt("Please choose a length of at least 8 characters and no more than 128 characters"));
     if (length >= 8 && length <= 128) {
-      var passwordLength = length;
+      passwordLength = length;
     } else {
       alert("Your answer is not in the required range. It must be a length of at least 8 characters and no more than 128 characters. Please try again.");
       return
     }
   var lowercaseAnswer = confirm("Do you want to include lowercase characters in your password? Select 'OK' for yes. Select 'Cancel' for no.");
+  if (lowercaseAnswer === true) {
+    passwordPool += lowercase;
+  }
   var uppercaseAnswer = confirm("Do you want to include uppercase characters in your password? Select 'OK' for yes. Select 'Cancel' for no.");
+  if (uppercaseAnswer === true) {
+    passwordPool += uppercase;
+  }
   var numericAnswer = confirm("Do you want to include numbers in your password? Select 'OK' for yes. Select 'Cancel' for no.")
+  if (numericAnswer === true) {
+    passwordPool += numbers;
+  }
   var specialAnswer = confirm("Do you want to include special characters in your password? Select 'OK' for yes. Select 'Cancel' for no.");
+  if (specialAnswer === true) {
+    passwordPool += special;
+  }
+
+  for (var i = 0; i <= passwordLength; i++) {
+    passwordGenerated += passwordPool.charAt(Math.floor(Math.random() * passwordPool.length + 1));
+  }
+  return passwordGenerated
 }
 
 // Get references to the #generate element
