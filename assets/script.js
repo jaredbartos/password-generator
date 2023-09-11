@@ -4,11 +4,11 @@ function generatePassword() {
   var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var numbers = "0123456789";
   var special = "!#$%&*+.;=?@_~";
-  var passwordPool = ""
-  var passwordLength
-  var passwordGenerated = ""
+  var passwordPool = "";
+  var passwordLength;
+  var passwordGenerated = "";
 
-  var length = Number(prompt("Please choose a length of at least 8 characters and no more than 128 characters"));
+  var length = Number(prompt("Please choose a length of at least 8 characters and no more than 128 characters."));
     if (length >= 8 && length <= 128) {
       passwordLength = length;
     } else {
@@ -32,10 +32,15 @@ function generatePassword() {
     passwordPool += special;
   }
 
-  for (var i = 0; i <= passwordLength; i++) {
-    passwordGenerated += passwordPool.charAt(Math.floor(Math.random() * passwordPool.length + 1));
+  if (lowercaseAnswer === false && uppercaseAnswer === false && numericAnswer === false && specialAnswer === false) {
+    alert ("You must select at least one character type to include in your password. Please try again.");
+    return;
   }
-  return passwordGenerated
+
+  for (var i = 0; i < passwordLength; i++) {
+    passwordGenerated += passwordPool.charAt(Math.floor(Math.random() * passwordPool.length));
+  }
+  return passwordGenerated;
 }
 
 // Get references to the #generate element
