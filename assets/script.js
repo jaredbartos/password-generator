@@ -27,7 +27,7 @@ function generatePassword() {
     if (numericAnswer === true) {
       passwordPool += numbers;
     }
-  var specialAnswer = confirm("Do you want to include special characters in your password? Select 'OK' for yes. Select 'Cancel' for no.");
+  var specialAnswer = confirm("Do you want to include special characters (e.g. !$%*#) in your password? Select 'OK' for yes. Select 'Cancel' for no.");
     if (specialAnswer === true) {
       passwordPool += special;
     }
