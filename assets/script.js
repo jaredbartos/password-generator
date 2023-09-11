@@ -16,21 +16,21 @@ function generatePassword() {
       return
     }
   var lowercaseAnswer = confirm("Do you want to include lowercase characters in your password? Select 'OK' for yes. Select 'Cancel' for no.");
-  if (lowercaseAnswer === true) {
-    passwordPool += lowercase;
-  }
+    if (lowercaseAnswer === true) {
+      passwordPool += lowercase;
+    }
   var uppercaseAnswer = confirm("Do you want to include uppercase characters in your password? Select 'OK' for yes. Select 'Cancel' for no.");
-  if (uppercaseAnswer === true) {
-    passwordPool += uppercase;
-  }
+    if (uppercaseAnswer === true) {
+      passwordPool += uppercase;
+    }
   var numericAnswer = confirm("Do you want to include numbers in your password? Select 'OK' for yes. Select 'Cancel' for no.")
-  if (numericAnswer === true) {
-    passwordPool += numbers;
-  }
+    if (numericAnswer === true) {
+      passwordPool += numbers;
+    }
   var specialAnswer = confirm("Do you want to include special characters in your password? Select 'OK' for yes. Select 'Cancel' for no.");
-  if (specialAnswer === true) {
-    passwordPool += special;
-  }
+    if (specialAnswer === true) {
+      passwordPool += special;
+    }
 
   if (lowercaseAnswer === false && uppercaseAnswer === false && numericAnswer === false && specialAnswer === false) {
     alert ("You must select at least one character type to include in your password. Please try again.");
