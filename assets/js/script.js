@@ -7,6 +7,7 @@ function generatePassword() {
   var passwordPool = "";
   var passwordLength;
   var passwordGenerated = "";
+  var errorMessage = "Password requirements were not met. Please try again."
   
   // Add prompts for each character type and include if selected
   var length = Number(prompt("Please choose a length of at least 8 characters and no more than 128 characters."));
@@ -14,7 +15,7 @@ function generatePassword() {
       passwordLength = length;
     } else {
       alert("Your answer is not in the required range. It must be a length of at least 8 characters and no more than 128 characters. Please try again.");
-      return
+      return errorMessage
     }
   var lowercaseAnswer = confirm("Do you want to include lowercase characters in your password? Select 'OK' for yes. Select 'Cancel' for no.");
     if (lowercaseAnswer) {
@@ -36,7 +37,7 @@ function generatePassword() {
   // Validate that at least one character type is selected
   if (!lowercaseAnswer && !uppercaseAnswer && !numericAnswer && !specialAnswer) {
     alert ("You must select at least one character type to include in your password. Please try again.");
-    return;
+    return errorMessage;
   }
 
   // Randomly choose characters from selected types and return the value
